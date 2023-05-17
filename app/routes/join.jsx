@@ -49,9 +49,9 @@ export async function action({ request }) {
       {
         errors: {
           email: "A user already exists with this email",
-          firstname:"A user already exists with this firstname",
-          lastname:"A user already exists with this lastname",
-          phone:"A user already exists with this phone",
+          firstname: "A user already exists with this firstname",
+          lastname: "A user already exists with this lastname",
+          phone: "A user already exists with this phone",
           password: null,
         },
       },
@@ -88,7 +88,7 @@ export default function Join() {
       firstnameRef.current?.focus();
     } else if (actionData?.errors?.lastname) {
       lastnameRef.current?.focus();
-    }else if (actionData?.errors?.phone) {
+    } else if (actionData?.errors?.phone) {
       phoneRef.current?.focus();
     } else if (actionData?.errors?.password) {
       passwordRef.current?.focus();
