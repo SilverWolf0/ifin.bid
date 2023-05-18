@@ -115,9 +115,9 @@ export default function NewProfilePage() {
         width: "100%",
       }}
     >
-      
+      <div className="bg-green-600 text-lg static text-white font-mono rounded-md text-left w-full h-full mx-5 my-5 ">
       <div>
-      <h1 className="text-2xl font-bold"> Your Profile </h1>
+      <h1 className="text-3xl font-bold"> Your Profile </h1>
         <label className="flex w-full flex-col gap-1">
           <span>First Name: </span>
           <input
@@ -256,6 +256,7 @@ export default function NewProfilePage() {
             {actionData.errors.address}
           </div>
         )}
+      </div>
       </div>
 
       <div className="text-right">
