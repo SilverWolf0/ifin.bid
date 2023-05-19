@@ -17,17 +17,17 @@ export default function MainsPage() {
 
   return (
     <div className="flex h-full min-h-screen flex-col">
-      <header className="flex items-center justify-between bg-slate-800 p-4 text-white">
+      <header className="flex items-center justify-between bg-green-600 p-4 text-white bg-left ">
         <h1 className="text-3xl font-bold">
-          <Link to=".">Main Page</Link>
+          <Link to=".">Ifin.Bid</Link>
         </h1>
-        <Link to ="profile ">
-          <p>{user.firstname}</p>
-        </Link>
       </header>
 
       <main className="flex h-full bg-white">
         <div className="h-full w-80 border-r bg-gray-50">
+        <Link to ="profile " className="block p-4 text-xl text-blue-500">
+          <p>{user.firstname}</p>
+        </Link>
           <Link to="new" className="block p-4 text-xl text-blue-500">
             New Note
           </Link>
@@ -88,7 +88,7 @@ export default function MainsPage() {
           )}
         </div>
 
-        <div className="flex-1 p-6">
+        <div className="flex-1 p-6 bg-green-600 text-lg static border-2 border-black text-white font-mono rounded-md text-left w-full h-full mx-5 my-5 ">
           <Outlet />
         </div>
       </main>

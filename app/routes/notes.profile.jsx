@@ -8,6 +8,9 @@ import { requireUserId } from "~/session.server";
 function update(){
   alert('update sucessfully');
 } 
+function save(){
+  alert('save sucessfully');
+} 
 
 export async function action({ request }) {
   const userId = await requireUserId(request);
@@ -115,7 +118,7 @@ export default function NewProfilePage() {
         width: "100%",
       }}
     >
-      <div className="bg-green-600 text-lg static text-white font-mono rounded-md text-left w-full h-full mx-5 my-5 ">
+      <div className=" text-lg static text-white font-mono rounded-md text-left w-full h-full mx-5 my-5 ">
       <div>
       <h1 className="text-3xl font-bold"> Your Profile </h1>
         <label className="flex w-full flex-col gap-1">
@@ -131,7 +134,7 @@ export default function NewProfilePage() {
           />
         </label>
         {actionData?.errors?.firstname && (
-          <div className="pt-1 text-red-700" id="firstname-error">
+          <div className="pt-1 text-red-500" id="firstname-error">
             {actionData.errors.firstname}
           </div>
         )}
@@ -260,11 +263,19 @@ export default function NewProfilePage() {
       </div>
 
       <div className="text-right">
-        <button onClick={update}
+        <button onClick={save}
           type="submit"
           className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:bg-blue-400"
         >
           Save
+        </button>
+      </div>
+      <div className="text-right">
+        <button onClick={update} 
+          type="submit"
+          className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:bg-blue-400"
+        >
+          Update
         </button>
       </div>
     </Form>
