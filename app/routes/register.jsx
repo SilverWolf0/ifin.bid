@@ -11,6 +11,12 @@ import { FaRegEnvelope, FaRegUser } from "react-icons/fa";
 import { HiOutlineKey } from "react-icons/hi";
 import { FcGoogle } from "react-icons/fc";
 
+import dashStyles from "~/styles/global.css";
+
+export function links() {
+  return [{ rel: "stylesheet", href: dashStyles }];
+}
+
 export async function loader({ request }) {
   const userId = await getUserId(request);
   if (userId) return redirect("/");
@@ -28,7 +34,7 @@ export async function action({ request }) {
 
   if (!validateEmail(email)) {
     return json(
-      { errors: { email: "Email is invalid", password: null } },
+      { errors: { email: "Email is Invalid", password: null } },
       { status: 400 }
     );
   }
@@ -104,15 +110,14 @@ export default function Join() {
       <head></head>
       <body className="flex h-screen justify-center bg-gradient-to-b from-cyan-50 to-lime-100">
         <div className="absolute z-10 flex h-screen w-screen bg-login bg-cover opacity-20 mix-blend-darken blur-md grayscale"></div>
-
-        <div className="z-20 m-auto flex h-176 w-176 flex-col rounded-2xl bg-white shadow-md drop-shadow-md">
-          <Form method="post" className="space-y-6">
+        <div className="z-30 m-auto flex h-176 w-176 flex-col rounded-2xl bg-white shadow-md drop-shadow-md">
+          <Form method="post" className="h-full">
             <div className="m-4 rounded-t-xl bg-lime-600 pb-6 pt-6">
               <h1 className="text-center font-poppins text-5xl font-bold text-white">
                 iFin.bid
               </h1>
             </div>
-            <div className="mt-5 pl-12 pr-12">
+            <div className="pb-6 pl-28 pr-28 pt-7">
               <div className="mb-2 mt-2">
                 <h1 className="text-center font-poppins text-3xl font-bold">
                   SIGN UP
@@ -170,7 +175,6 @@ export default function Join() {
                     ref={lastnameRef}
                     id="lastname"
                     required
-                    autoFocus={true}
                     autoComplete="lastname"
                     aria-invalid={
                       actionData?.errors?.lastname ? true : undefined
@@ -199,7 +203,6 @@ export default function Join() {
                   ref={emailRef}
                   id="email"
                   required
-                  autoFocus={true}
                   autoComplete="email"
                   aria-invalid={actionData?.errors?.email ? true : undefined}
                   aria-describedby="email-error"
@@ -255,7 +258,7 @@ export default function Join() {
                 </button>
               </div>
             </div>
-            <div className="m-auto mb-4 pl-6 pr-6 align-bottom">
+            <div className="m-auto pb-4 pl-6 pr-6 pt-7">
               <p className="text-center font-robotocondensed">
                 Already have an account? Log in{" "}
                 <Link

@@ -12,11 +12,7 @@ export default function Index() {
         <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
             <div className="absolute inset-0">
-              <img
-                className="h-full w-full object-cover"
-                src=""
-                alt=""
-              />
+              <img className="h-full w-full object-cover" src="" alt="" />
 
               <div className="absolute inset-0 bg-[color:rgba(254,204,27,0.5)] mix-blend-multiply" />
             </div>
@@ -41,10 +37,10 @@ export default function Index() {
                 ) : (
                   <div className="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
                     <Link
-                      to="/join"
+                      to="/register"
                       className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-yellow-700 shadow-sm hover:bg-yellow-50 sm:px-8"
                     >
-                      Sign up
+                      Sign Up
                     </Link>
                     <Link
                       to="/login"
@@ -68,9 +64,7 @@ export default function Index() {
 
         <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
           <div className="mt-6 flex flex-wrap justify-center gap-8">
-            {[
-              
-            ].map((img) => (
+            {[].map((img) => (
               <a
                 key={img.href}
                 href={img.href}
