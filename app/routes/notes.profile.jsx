@@ -126,7 +126,7 @@ export default function NewProfilePage() {
           <input
             ref={firstnameRef}
             name="firstname"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose"
+            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black"
             aria-invalid={actionData?.errors?.firstname ? true : undefined}
             aria-errormessage={
               actionData?.errors?.firstname ? "firstname-error" : undefined
@@ -146,7 +146,7 @@ export default function NewProfilePage() {
           <input
             ref={lastnameRef}
             name="lastname"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose"
+            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black"
             aria-invalid={actionData?.errors?.lastname ? true : undefined}
             aria-errormessage={
               actionData?.errors?.lastname ? "lastname-error" : undefined
@@ -166,7 +166,7 @@ export default function NewProfilePage() {
           <input
             ref={gmailRef}
             name="gmail"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose"
+            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black"
             aria-invalid={actionData?.errors?.gmail ? true : undefined}
             aria-errormessage={
               actionData?.errors?.gmail ? "gmail-error" : undefined
@@ -186,7 +186,7 @@ export default function NewProfilePage() {
           <input
             ref={phoneRef}
             name="phone"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose"
+            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black"
             aria-invalid={actionData?.errors?.phone ? true : undefined}
             aria-errormessage={
               actionData?.errors?.phone ? "phone-error" : undefined
@@ -206,7 +206,7 @@ export default function NewProfilePage() {
           <input
             ref={accountRef}
             name="account"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose"
+            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black"
             aria-invalid={actionData?.errors?.account ? true : undefined}
             aria-errormessage={
               actionData?.errors?.account ? "account-error" : undefined
@@ -226,7 +226,7 @@ export default function NewProfilePage() {
           <input
             ref={dateRef}
             name="date"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose"
+            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black "
             aria-invalid={actionData?.errors?.date ? true : undefined}
             aria-errormessage={
               actionData?.errors?.date ? "date-error" : undefined
@@ -247,7 +247,7 @@ export default function NewProfilePage() {
             ref={addressRef}
             name="address"
             rows={8}
-            className="w-full flex-1 rounded-md border-2 border-blue-500 px-3 py-2 text-lg leading-6"
+            className="w-full flex-1 rounded-md border-2 border-blue-500 px-3 py-2 text-lg leading-6 text-black"
             aria-invalid={actionData?.errors?.address ? true : undefined}
             aria-errormessage={
               actionData?.errors?.address ? "address-error" : undefined
