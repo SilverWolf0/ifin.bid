@@ -28,7 +28,6 @@ export async function action({ request }) {
   const email = formData.get("email");
   const firstname = formData.get("firstname");
   const lastname = formData.get("lastname");
-  const phone = formData.get("phone");
   const password = formData.get("password");
   const redirectTo = safeRedirect(formData.get("redirectTo"), "/");
 
@@ -61,7 +60,6 @@ export async function action({ request }) {
           email: "A user already exists with this email",
           firstname: "A user already exists with this firstname",
           lastname: "A user already exists with this lastname",
-          phone: "A user already exists with this phone",
           password: null,
         },
       },
@@ -69,7 +67,7 @@ export async function action({ request }) {
     );
   }
 
-  const user = await createUser(email, firstname, lastname, phone, password);
+  const user = await createUser(email, firstname, lastname, password);
 
   return createUserSession({
     request,
@@ -88,7 +86,6 @@ export default function Join() {
   const emailRef = React.useRef(null);
   const firstnameRef = React.useRef(null);
   const lastnameRef = React.useRef(null);
-  const phoneRef = React.useRef(null);
   const passwordRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -98,8 +95,6 @@ export default function Join() {
       firstnameRef.current?.focus();
     } else if (actionData?.errors?.lastname) {
       lastnameRef.current?.focus();
-    } else if (actionData?.errors?.phone) {
-      phoneRef.current?.focus();
     } else if (actionData?.errors?.password) {
       passwordRef.current?.focus();
     }
