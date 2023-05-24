@@ -25,9 +25,9 @@ export async function loader({ request }) {
 
 export async function action({ request }) {
   const formData = await request.formData();
+  const email = formData.get("email");
   const firstname = formData.get("firstname");
   const lastname = formData.get("lastname");
-  const email = formData.get("email");
   const password = formData.get("password");
   const redirectTo = safeRedirect(formData.get("redirectTo"), "/");
 
@@ -57,9 +57,9 @@ export async function action({ request }) {
     return json(
       {
         errors: {
+          email: "A user already exists with this email",
           firstname: "A user already exists with this firstname",
           lastname: "A user already exists with this lastname",
-          email: "A user already exists with this email",
           password: null,
         },
       },

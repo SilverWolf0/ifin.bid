@@ -11,57 +11,54 @@ export async function loader({ request }) {
   return json({ noteListItems });
 }
 
-export default function MainsPage() {
+export default function IfinPage() {
   const data = useLoaderData();
   const user = useUser();
 
   return (
     <div className="flex h-full min-h-screen flex-col">
-      <header className="flex items-center justify-between bg-green-600 p-4 text-white bg-left ">
+      <header className="flex items-center justify-between bg-lime-600 p-4 text-white">
         <h1 className="text-3xl font-bold">
           <Link to=".">Ifin.Bid</Link>
         </h1>
+        <Link to ="profile ">
+          <p>{user.firstname}</p>
+        </Link>
       </header>
 
       <main className="flex h-full bg-white">
         <div className="h-full w-80 border-r bg-gray-50">
-        <Link to ="profile " className="block p-4 text-xl text-blue-500">
-          <p>{user.firstname}</p>
-        </Link>
-          <Link to="new" className="block p-4 text-xl text-blue-500">
-            New Note
-          </Link>
-          <Link to="profile" className="block p-4 text-xl text-blue-500">
+          <Link to="profile" className="block p-4 text-xl text-lime-500">
             Edit Profile
           </Link>
-          <Link to="dashboard" className="block p-4 text-xl text-blue-500">
+          <Link to="dashboard" className="block p-4 text-xl text-lime-500">
             Dashboard
           </Link>
-          <Link to="apply" className="block p-4 text-xl text-blue-500">
+          <Link to="apply" className="block p-4 text-xl text-lime-500">
             Apply Financing
           </Link>
-          <Link to="view" className="block p-4 text-xl text-blue-500">
+          <Link to="view" className="block p-4 text-xl text-lime-500">
             View Application Offers
           </Link>
-          <Link to="offer" className="block p-4 text-xl text-blue-500">
+          <Link to="offer" className="block p-4 text-xl text-lime-500">
             Offers
           </Link>
-          <Link to="static" className="block p-4 text-xl text-blue-500">
+          <Link to="static" className="block p-4 text-xl text-lime-500">
             Analytics
           </Link>
-          <Link to="setting" className="block p-4 text-xl text-blue-500">
+          <Link to="setting" className="block p-4 text-xl text-lime-500">
             Setting
           </Link>
-          <Link to="help" className="block p-4 text-xl text-blue-500">
+          <Link to="help" className="block p-4 text-xl text-lime-500">
             Help
           </Link>
-          <Link to="button" className="block p-4 text-xl text-blue-500">
+          <Link to="button" className="block p-4 text-xl text-lime-500">
             button
           </Link>
           <Form action="/logout" method="post">
           <button
             type="submit"
-            className="block p-4 text-xl text-blue-500"
+            className="block p-4 text-xl text-lime-500"
           >
             Logout
           </button>
@@ -88,7 +85,7 @@ export default function MainsPage() {
           )}
         </div>
 
-        <div className="flex-1 p-6 bg-green-600 text-lg static border-2 border-black text-white font-mono rounded-md text-left w-full h-full mx-5 my-5 ">
+        <div className="flex-1 p-6">
           <Outlet />
         </div>
       </main>

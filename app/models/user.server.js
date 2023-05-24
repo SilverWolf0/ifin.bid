@@ -49,7 +49,7 @@ export async function verifyLogin(email, password) {
   );
 
   if (!isValid) {
-    return null;
+    return null; 
   }
 
   const { password: _password, ...userWithoutPassword } = userWithPassword;

@@ -118,7 +118,7 @@ export default function NewProfilePage() {
         width: "100%",
       }}
     >
-      <div className=" text-lg static text-white font-mono rounded-md text-left w-full h-full mx-5 my-5 ">
+      <div className=" text-lg static text-black font-mono rounded-md text-left w-full h-full mx-5 my-5 ">
       <div>
       <h1 className="text-3xl font-bold"> Your Profile </h1>
         <label className="flex w-full flex-col gap-1">
@@ -126,7 +126,7 @@ export default function NewProfilePage() {
           <input
             ref={firstnameRef}
             name="firstname"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black"
+            className="flex-1 rounded-md border-2 border-lime-500 px-3 text-lg leading-loose text-black"
             aria-invalid={actionData?.errors?.firstname ? true : undefined}
             aria-errormessage={
               actionData?.errors?.firstname ? "firstname-error" : undefined
@@ -146,7 +146,7 @@ export default function NewProfilePage() {
           <input
             ref={lastnameRef}
             name="lastname"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black"
+            className="flex-1 rounded-md border-2 border-lime-500 px-3 text-lg leading-loose text-black"
             aria-invalid={actionData?.errors?.lastname ? true : undefined}
             aria-errormessage={
               actionData?.errors?.lastname ? "lastname-error" : undefined
@@ -166,7 +166,7 @@ export default function NewProfilePage() {
           <input
             ref={gmailRef}
             name="gmail"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black"
+            className="flex-1 rounded-md border-2 border-lime-500 px-3 text-lg leading-loose text-black"
             aria-invalid={actionData?.errors?.gmail ? true : undefined}
             aria-errormessage={
               actionData?.errors?.gmail ? "gmail-error" : undefined
@@ -186,7 +186,7 @@ export default function NewProfilePage() {
           <input
             ref={phoneRef}
             name="phone"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black"
+            className="flex-1 rounded-md border-2 border-lime-500 px-3 text-lg leading-loose text-black"
             aria-invalid={actionData?.errors?.phone ? true : undefined}
             aria-errormessage={
               actionData?.errors?.phone ? "phone-error" : undefined
@@ -206,7 +206,7 @@ export default function NewProfilePage() {
           <input
             ref={accountRef}
             name="account"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black"
+            className="flex-1 rounded-md border-2 border-lime-500 px-3 text-lg leading-loose text-black"
             aria-invalid={actionData?.errors?.account ? true : undefined}
             aria-errormessage={
               actionData?.errors?.account ? "account-error" : undefined
@@ -226,7 +226,7 @@ export default function NewProfilePage() {
           <input
             ref={dateRef}
             name="date"
-            className="flex-1 rounded-md border-2 border-blue-500 px-3 text-lg leading-loose text-black "
+            className="flex-1 rounded-md border-2 border-lime-500 px-3 text-lg leading-loose text-black "
             aria-invalid={actionData?.errors?.date ? true : undefined}
             aria-errormessage={
               actionData?.errors?.date ? "date-error" : undefined
@@ -247,7 +247,7 @@ export default function NewProfilePage() {
             ref={addressRef}
             name="address"
             rows={8}
-            className="w-full flex-1 rounded-md border-2 border-blue-500 px-3 py-2 text-lg leading-6 text-black"
+            className="w-full flex-1 rounded-md border-2 border-lime-500 px-3 py-2 text-lg leading-6 text-black"
             aria-invalid={actionData?.errors?.address ? true : undefined}
             aria-errormessage={
               actionData?.errors?.address ? "address-error" : undefined
@@ -265,7 +265,7 @@ export default function NewProfilePage() {
       <div className="text-right">
         <button onClick={save}
           type="submit"
-          className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:bg-blue-400"
+          className="rounded bg-lime-500 px-4 py-2 text-white hover:bg-lime-600 focus:bg-lime-400"
         >
           Save
         </button>
@@ -273,7 +273,7 @@ export default function NewProfilePage() {
       <div className="text-right">
         <button onClick={update} 
           type="submit"
-          className="rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600 focus:bg-blue-400"
+          className="rounded bg-lime-500 px-4 py-2 text-white hover:bg-lime-600 focus:bg-lime-400"
         >
           Update
         </button>
