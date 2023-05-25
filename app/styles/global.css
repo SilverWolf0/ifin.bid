@@ -17,6 +17,32 @@ nav::-webkit-scrollbar {
   display: none; /* for Chrome, Safari, and Opera */
 }
 
+#ftype:hover img {
+  filter: invert(100%);
+}
+
+.custom-scrollbars__track-and-thumb {
+  display: block;
+  height: 100%; /* must have some height */
+  position: relative;
+  width: 16px; /* must have some width */
+}
+
+/* The track is meant to fill the space it's given, so top and bottom are set to 0. */
+.custom-scrollbars__track {
+  bottom: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: 16px; /* must have some width */
+}
+
+/* No top or bottom set for the thumb. That will be controlled by JavaScript. */
+.custom-scrollbars__thumb {
+  position: absolute;
+  width: 16px; /* must have some width */
+}
+
 /* */
 @media only screen and (max-width: 768px) {
   body {

@@ -8,7 +8,6 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { Bar } from "react-chartjs-2";
 import {
   FaBars,
   FaTimes,
@@ -35,32 +34,9 @@ ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 export default function DashboardPage() {
   const [open, setOpen] = useState(false);
-  const data = {
-    labels: ["1"],
-    datasets: [
-      {
-        label: "Dataset 1",
-        data: [36],
-        backgroundColor: "green",
-        borderWidth: 0,
-        borderRadius: 12,
-      },
-      {
-        label: "Dataset 2",
-        data: [42],
-        backgroundColor: "teal",
-        borderWidth: 0,
-        borderRadius: 12,
-      },
-    ],
-  };
-  const options = {};
-
   return (
     <main>
-      <head>
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      </head>
+      <head></head>
 
       <body className='${open ? "ml-0" : "ml-60"} ml-72 flex bg-white p-6'>
         <div className="mx-10 my-6 w-full">
@@ -208,7 +184,7 @@ export default function DashboardPage() {
                 </span>
               </div>
             </Link>
-            <Link to="/apply" className="text-base text-lime-950">
+            <Link to="/apply_financing" className="text-base text-lime-950">
               <div className="mb-2 ml-2 mr-2 mt-2 block rounded-md pb-3 pl-4 pr-4 pt-3 hover:cursor-pointer hover:bg-white">
                 <FaRegCreditCard className="inline-block text-3xl" />
                 <span className="ml-2 inline-block align-middle text-base">
