@@ -1,17 +1,11 @@
 import { Link } from "@remix-run/react";
 
-export default function NoteIndexPage() {
+export default function IfinIndexPage() {
   return (
     <p>
-      No note selected. Select a note on the left, or{" "}
-      <Link to="new" className="text-blue-500 underline">
-        create a new note.
-      </Link>
-      <p>
       <Link to="profile" className="text-blue-500 underline">     
         open profile
       </Link>
-    </p>
       <p>
       <Link to="dashboard" className="text-blue-500 underline">     
         open dashboard

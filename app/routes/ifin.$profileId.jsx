@@ -7,36 +7,41 @@ import {
 } from "@remix-run/react";
 import invariant from "tiny-invariant";
 
-import { deleteNote, getNote } from "~/models/note.server";
+import { deleteProfile, getProfile } from "~/models/profile.server";
 import { requireUserId } from "~/session.server";
 
 export async function loader({ request, params }) {
   const userId = await requireUserId(request);
-  invariant(params.noteId, "noteId not found");
+  invariant(params.profileId, "profileId not found");
 
-  const note = await getNote({ userId, id: params.noteId });
-  if (!note) {
+  const profile = await getProfile({ userId, id: params.profileId });
+  if (!profile) {
     throw new Response("Not Found", { status: 404 });
   }
-  return json({ note });
+  return json({ profile });
 }
 
 export async function action({ request, params }) {
   const userId = await requireUserId(request);
-  invariant(params.noteId, "noteId not found");
+  invariant(params.profileId, "profileId not found");
 
-  await deleteNote({ userId, id: params.noteId });
+  await deleteProfile({ userId, id: params.profileId });
 
-  return redirect("/notes");
+  return redirect("/profile");
 }
 
-export default function NoteDetailsPage() {
+export default function display() {
   const data = useLoaderData();
 
   return (
     <div>
-      <h3 className="text-2xl font-bold">{data.note.title}</h3>
-      <p className="py-6">{data.note.body}</p>
+      <h3 className="text-2xl font-bold">{data.profile.firstname}</h3>
+      <p className="py-6">{data.profile.lastname}</p>
+      <p className="py-6">{data.profile.email}</p>
+      <p className="py-6">{data.profile.phone}</p>
+      <p className="py-6">{data.profile.account}</p>
+      <p className="py-6">{data.profile.date}</p>
+      <p className="py-6">{data.profile.address}</p>
       <hr className="my-4" />
       <Form method="post">
         <button
@@ -62,7 +67,7 @@ export function ErrorBoundary() {
   }
 
   if (error.status === 404) {
-    return <div>Note not found</div>;
+    return <div>profile not found</div>;
   }
 
   return <div>An unexpected error occurred: {error.statusText}</div>;
